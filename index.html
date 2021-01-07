@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/style/style.css">
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-inverse">
+            <h1 class="text-center">Weather Dashboard</h1>
+        </nav>
+    </header>
+    <main>
+        <section class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3" style="background-color:RGB(245, 243, 242);margin-top:-20px;">
+                    <form>
+                        <div class="form-group">
+                            <h3>Search for a City:</h3>
+                            <input type="text" id="searchCity" placeholder="city name.." /><button type="submit"
+                                id="searchButton" class="btn btn-primary">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                            <div class="alertInfo">
+
+                            </div>
+                        </div>
+                    </form>
+                    <div>
+                        <ul class="list-group">
+
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-9">
+                    <section class="container-fluid">
+                        <div class="row" id="border">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <p class="card-title" id="city_name"></p>
+                                    <ul id="displayInfo">
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h2 id="show" class="disapper">5-Day Forecast:</h2>
+                            <div class="col-lg-12">
+                                <div class="card-deck" class="getfiveDays">
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+    <script type="text/javascript" src="assets/script/script.js"></script>
+</body>
