@@ -1,0 +1,29 @@
+/*for the html page set the margin and padding 0*/
+*
+{
+    margin:0;
+    padding:0;
+}
+/*change the font color to white*/
+h1
+{
+    color: white;
+}
+
+/*css for the input text*/
+#searchCity
+{
+    font-size:20px;
+   
+    border-radius: 5px;
+}
+/*set the top margin for the search button*/
+button
+{
+    margin-top:-7px;
+}
+/*set list style to none*/
+ul
+{
+    list-style: none;
+}
