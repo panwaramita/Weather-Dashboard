@@ -183,5 +183,5 @@ function fillFiveDayData() {
         error: function (result) {
         }
     });
-}
+}z`
 });
