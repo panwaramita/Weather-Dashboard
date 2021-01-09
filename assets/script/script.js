@@ -26,4 +26,36 @@ $(document).ready(function () {
 
         }
     });
+     //fill from localstorage the city last searched
+     function fillFromLocalStorage() {
+        //check if localstorage for the city is empty or not
+        if (localStorage.getItem("city_name")) {
+            var city = localStorage.getItem("city_name");
+            $("#searchCity").val(city);
+            inputVal = city;
+            //fill the city info
+            fillCityInfo();
+            }
+    }
+    //check if the city name is already present in the city list if it's present do not make entry
+    function checkCityAlreadyExist() {
+        var getList = $(".list-group a");
+        var check = true;
+        if (getList.length > 0) {
+            for (var i = 0; i < getList.length; i++) {
+                if (inputVal == getList[i].innerHTML) {
+                    check = false;
+                    break;
+                }
+            }
+            if (check) {
+                fillList();
+            }
+        }
+        else {
+            fillList();
+        }
+
+
+    }
 });
