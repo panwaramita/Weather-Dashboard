@@ -58,8 +58,8 @@ $(document).ready(function () {
 
 
     }
-     //fill the list of all the city serached  by the user
-     function fillList() {
+    //fill the list of all the city serached  by the user
+    function fillList() {
         var city = $("#searchCity").val();
         var list = $(".list-group");
         if (localStorage.getItem("city_name")) {
@@ -74,19 +74,19 @@ $(document).ready(function () {
     }
     //when user click on the city from the list
     $('.list-group').on('click', function (event) {
-     var get = event.target.innerText;
+        var get = event.target.innerText;
         console.log("get", get);
         inputVal = get;
         fillCityInfo();
     });
 
-//fill the current weather info for the serached city
+    //fill the current weather info for the serached city
     function fillCityInfo() {
         //api key
         const apiKey = "8885e952b1990b5bf855eb797f5fe06b";
         //url path for the open weather api
         const pathurl = "https://api.openweathermap.org/data/2.5/weather?q=" + inputVal + "&appid=" + apiKey + "&units=metric";
-       //ajax call
+        //ajax call
         $.ajax({
             url: pathurl,
             type: "GET",
@@ -147,5 +147,41 @@ $(document).ready(function () {
         });
 
     }
-
+//fill the 5 day broadcast for current city
+function fillFiveDayData() {
+    //set the api
+    const apiKey = "8885e952b1990b5bf855eb797f5fe06b";
+    //set the path
+    const pathurl = "https://api.openweathermap.org/data/2.5/forecast?q=" + inputVal + "&appid=" + apiKey+"&units=metric";
+    //make an ajax call
+    $.ajax({
+        url: pathurl,
+        type: "GET",
+        dataType: "json",
+        success: function (result) {
+            $("#show").removeClass("disapper");
+            $("#show").addClass("show");;
+            var count = 0;
+            if (count != 5) {
+                for (var i = 0; i < result.list.length; i++) {
+                    var date = result.list[i].dt_txt;
+                    var checkDate = new Date(date);
+                    if (checkDate.getHours() == 6) {
+                        // console.log(checkDate);
+                        var displayDate = (checkDate.getMonth() + 1) + "/" + checkDate.getDate() + "/" + checkDate.getFullYear();
+                        const icon = "https://openweathermap.org/img/wn/" + result.list[i].weather[0]["icon"] + "@2x.png";
+                        const temp = "Temprature: " + ((((((result.list[i].main.temp))) * 9) / 5) + 32).toFixed(2) + String.fromCharCode(176) + "F";
+                        const humidity = "Humidity: " + result.list[i].main.humidity + "%";
+                        count++;
+                        var data = "<div class='col-lg-2'><div class='card bg-primary'><div class='card-body text-center'><p class='card-text'>" + displayDate + "</p><img src=" + icon + " /><p class='card-text'>" + temp + "</p><p class='card-text'>" + humidity + "</p></div></div>";
+                        $(".card-deck").append(data);
+                    }
+                }
+            }
+            $("#searchCity").val('');
+        },
+        error: function (result) {
+        }
+    });
+}
 });
