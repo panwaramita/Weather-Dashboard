@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!--head of the html page-->
 
 <head>
+    <!--meta information-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--bootstrap link-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
+    <!--Link to the jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--link to the stylesheet-->
     <link rel="stylesheet" href="assets/style/style.css">
+    <!--title to the page-->
     <title>Weather Dashboard</title>
 </head>
 
 <body>
+    <!--header information-->
     <header>
+        <!--navigation-->
         <nav class="navbar navbar-inverse">
             <h1 class="text-center">Weather Dashboard</h1>
         </nav>
     </header>
+    <!--main section-->
     <main>
         <section class="container-fluid">
             <div class="row">
                 <div class="col-lg-3" style="background-color:RGB(245, 243, 242);margin-top:-20px;">
+                    <!--form to enter the city-->
                     <form>
                         <div class="form-group">
                             <h3>Search for a City:</h3>
@@ -29,11 +37,13 @@
                                 id="searchButton" class="btn btn-primary">
                                 <span class="glyphicon glyphicon-search"></span>
                             </button>
+                            <!--if wrong city entered user will get an alert-->
                             <div class="alertInfo">
 
                             </div>
                         </div>
                     </form>
+                    <!--list of all city searched-->
                     <div>
                         <ul class="list-group">
 
@@ -45,6 +55,7 @@
                 <div class="col-lg-9">
                     <section class="container-fluid">
                         <div class="row" id="border">
+                            <!--containes the current day weather-->
                             <div class="col-lg-12">
                                 <div class="card">
                                     <p class="card-title" id="city_name"></p>
@@ -54,6 +65,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!--containes the 5 day weather-->
                         <div class="row">
                             <h2 id="show" class="disapper">5-Day Forecast:</h2>
                             <div class="col-lg-12">
@@ -69,5 +81,6 @@
         </section>
     </main>
     <footer></footer>
+    <!--link the external javascript-->
     <script type="text/javascript" src="assets/script/script.js"></script>
 </body>
