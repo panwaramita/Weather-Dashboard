@@ -27,3 +27,30 @@ ul
 {
     list-style: none;
 }
+
+/*set list style to none*/
+#displayInfo
+{
+    list-style: none;
+    line-height:30px;
+}
+
+/*set the border*/
+.border
+{
+    border-top: 1px lightgrey solid;
+    border-left: 1px lightgrey solid;
+    border-bottom: 1px lightgrey solid;
+}
+
+/*css for the alert*/
+.show
+{
+    display: block;
+}
+
+/*css for the alert*/
+.disapper
+{
+    display: none;
+}
