@@ -119,14 +119,20 @@ $(document).ready(function () {
                 }).then(function (res) {
                     var uvI = res.value;
                     //check the uv index and change the color for normal moderate and high
-                    if (uvI >= 0 && uvI <= 2) {
+                    if (uvI >= 0 && uvI <= 2.9) {
                         UVindex.innerHTML = "UV Index: <mark style='background-color:green'>" + uvI + "</mark>";
                     }
-                    else if (uvI >= 3 && uvI <= 5) {
+                    else if (uvI >= 3 && uvI <= 5.9) {
                         UVindex.innerHTML = "UV Index: <mark style='background-color:yellow'>" + uvI + "</mark>";
+                    } 
+                    else if (uvI >= 6 && uvI <=7.9) {
+                        UVindex.innerHTML = "UV Index: <mark style='background-color:orange'>" + uvI + "</mark>";
                     }
-                    else {
+                    else if (uvI >= 8 && uvI <=10.9) {
                         UVindex.innerHTML = "UV Index: <mark style='background-color:red'>" + uvI + "</mark>";
+                    }
+                    else if (uvI >=11) {
+                        UVindex.innerHTML = "UV Index: <mark style='background-color:violet'>" + uvI + "</mark>";
                     }
                 });
                 $("#displayInfo").append(temp);

@@ -9,7 +9,7 @@
 
 ## Introduction
 
-The Weather-Dashborad project allow a user to see the weather outlook for multiple cities so that he can plan a trip accordingly. When user  search for a city he gets the  update for the current day and 5 day forecast.Whenever user load the page again he will be presented with the last searched city.
+The Weather-Dashborad project allow a user to see the weather outlook for multiple cities so that he can plan a trip accordingly. When user  search for a city he gets the  update for the current day and 5 day forecast. Whenever user load the page again he will be presented with the last searched city.
 
 ## Technologies
 
